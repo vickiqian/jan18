@@ -1,0 +1,247 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|Overpass+Mono:300,400,600,700|Press+Start+2P" rel="stylesheet">
+
+    <style type="text/css">
+/* YUI 3.5.0 reset.css (http://developer.yahoo.com/yui/3/cssreset/) - http://cssreset.com */
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,figure,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+body {
+    margin: 0px auto;
+    text-align: center;
+    
+}
+main {
+    margin: 0px auto;
+    box-sizing: border-box;
+}
+abbr{
+    text-decoration: none;
+    
+      }
+
+li{
+  font-family: 'Overpass Mono', monospace;  
+      }
+h1{
+  font-family: 'Press Start 2P', cursive; 
+  font-size: 2rem;
+  position: sticky;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  animation: color 2s ease infinite;
+  
+      }
+h3{
+   font-family: 'Cabin Sketch', cursive; 
+   font-size: 2rem;
+   
+   
+      }
+      @keyframes color{
+        0%{color: black;}
+        50%{color: red;}
+        100%{color: black;}
+      }  
+      @keyframes glow{
+        0%{text-shadow: none;}
+        50%{text-shadow: 3px 3px 10px yellow;}
+        100%{text-shadow: none;}
+      }
+/*Smart phone*/
+@media screen and (max-width: 599px) {
+  html, body {
+    width: 100%;
+    overflow: scroll;
+    
+}
+  ul {
+    margin-top: 20px;
+    width: 80vw;
+    display: grid;
+    grid-auto-rows: 80vw;
+    grid-row-gap: 80px;
+    
+}
+  h3{
+    margin-top: 12vh;
+  }
+  li{
+    border: 15px solid blue;  
+    margin-left: 5vw;
+    width: 80vw;
+    height: 80vw;
+    font-family: 'Overpass Mono', monospace;
+    font-size: 6rem;
+    font-weight: 700;
+    color: blue;
+    background-color: white;
+    padding-top: 2vh;
+  
+  }
+  li:hover{
+    transition: all .3s ease;
+    background-color: blue;
+    color: yellow;
+  }
+
+  .day{
+    display: none;
+  }
+}
+        
+/*Tablet*/
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+  html, body {
+    width: 100%;
+    overflow: scroll;
+}
+  .glow{
+    animation: glow 1.5s ease infinite;
+  }
+  ul {
+    
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 100vh;
+    grid-row-gap: 40px;
+}
+  h3{
+    margin-top: 30vh;
+    word-spacing: 1.2em;
+    opacity: 0;
+  }
+  .day{
+    display: none;
+  }
+  li{
+    height: 100%;
+    background-color: blue;
+    color: white;
+    font-size: 3em;
+    padding-top: 30px;
+  }
+  li:hover{
+    transition: all .3s ease;
+    background-color: yellow;
+    color: black;
+  }
+  li:hover h3{
+    transition: opacity .5s ease;
+    opacity: 1;
+  }
+  abbr{
+    
+  }
+  li.begins.on.sunday { grid-column: 1; }
+  li.begins.on.monday { grid-column: 2; }
+  li.begins.on.tuesday { grid-column: 3; }
+  li.begins.on.wednesday { grid-column: 4; }
+  li.begins.on.thursday { grid-column: 5; }
+  li.begins.on.friday { grid-column: 6;}
+  li.begins.on.saturday { grid-column: 7;}
+}
+        
+/*Desktop*/
+@media screen and (min-width: 1200px) {
+  html, body {
+    width: 100%;
+    height: 100% !important;
+    overflow: scroll;
+}
+  .day{
+    font-size: 2rem;
+    color: blue;
+  }
+  h3{
+    font-size: 0;
+    color: blue;
+    margin-bottom: 5px;
+    text-shadow: none;
+  }
+  .glow{
+    animation: glow 1.5s ease infinite;
+  }
+  li{
+    font-size: 4rem;
+  }
+  li:hover{
+    transition: all .3s ease;
+    background-color: blue;
+    color: yellow;
+  }
+  li:hover h3{
+    transition: all .3s ease;
+    font-size: 2rem;
+    color: yellow;
+  }
+  ul {
+    text-align: center;
+    height: 80%;
+    width: 80%;
+    padding-left: 10%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+  li.begins.on.sunday { grid-column: 1; }
+  li.begins.on.monday { grid-column: 2; }
+  li.begins.on.tuesday { grid-column: 3; }
+  li.begins.on.wednesday { grid-column: 4; }
+  li.begins.on.thursday { grid-column: 5; }
+  li.begins.on.friday { grid-column: 6;}
+  li.begins.on.saturday { grid-column: 7;}
+  abbr {
+      display: none;
+}
+}
+        
+    </style>
+</head>
+<body>
+    <main>
+    <header><h1>January 2018</h1></header>
+    <ul>
+        <li class="day">S</li>
+        <li class="day">M</li>
+        <li class="day">T</li>
+        <li class="day">W</li>
+        <li class="day">T</li>
+        <li class="day">F</li>
+        <li class="day">S</li>
+        <li class="begins on monday glow"><abbr title="Monday">M</abbr>1<h3>New Years Day</h3></li>
+        <li><abbr title="Tuesday">T</abbr>2</li>
+        <li><abbr title="Wednesday">W</abbr>3</li>
+        <li><abbr title="Thursday">T</abbr>4</li>
+        <li><abbr title="Friday">F</abbr>5</li>
+        <li><abbr title="Saturday">S</abbr>6</li>
+        <li><abbr title="Sunday">S</abbr>7</li>
+        <li><abbr title="Monday">M</abbr>8</li>
+        <li><abbr title="Tuesday">T</abbr>9</li>
+        <li><abbr title="Wednesday">W</abbr>10</li>
+        <li><abbr title="Thursday">T</abbr>11</li>
+        <li><abbr title="Friday">F</abbr>12</li>
+        <li><abbr title="Saturday">S</abbr>13</li>
+        <li><abbr title="Sunday">S</abbr>14</li>
+      <li class="glow"><abbr title="Monday">M</abbr>15<h3>Martin Luther King Day</h3></li>
+        <li><abbr title="Tuesday">T</abbr>16</li>
+        <li><abbr title="Wednesday">W</abbr>17</li>
+        <li><abbr title="Thursday">T</abbr>18</li>
+        <li><abbr title="Friday">F</abbr>19</li>
+        <li><abbr title="Saturday">S</abbr>20</li>
+        <li><abbr title="Sunday">S</abbr>21</li>
+        <li><abbr title="Monday">M</abbr>22</li>
+        <li><abbr title="Tuesday">T</abbr>23</li>
+        <li><abbr title="Wednesday">W</abbr>24</li>
+        <li><abbr title="Thursday">T</abbr>25</li>
+        <li><abbr title="Friday">F</abbr>26</li>
+        <li><abbr title="Saturday">S</abbr>27</li>
+        <li><abbr title="Sunday">S</abbr>28</li>
+        <li><abbr title="Monday">M</abbr>29</li>
+        <li><abbr title="Tuesday">T</abbr>30</li>
+        <li><abbr title="Wednesday">W</abbr>31</li>
+   </ul>
+   </main>
+</body>
+</html>
